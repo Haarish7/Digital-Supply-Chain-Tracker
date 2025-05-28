@@ -1,5 +1,6 @@
 package com.example.supplychain.repository;
 
+
 import com.example.supplychain.entity.User;
 import com.example.supplychain.enums.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
