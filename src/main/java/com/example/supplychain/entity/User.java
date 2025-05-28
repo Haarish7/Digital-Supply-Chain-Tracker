@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-//@Table(name = "Haarish")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +16,9 @@ public class User {
     private Long id;
 
     private String name;
+
+    @Column(unique = true, nullable = false)
+    private String username; // ✅ Added username field
 
     @Column(unique = true, nullable = false)
     private String email;

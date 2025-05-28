@@ -1,8 +1,10 @@
 package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
+import com.example.supplychain.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,4 +26,9 @@ public class Shipment {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ShipmentStatus status;
+
+    // ✅ Added relationship to User
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user;
 }
