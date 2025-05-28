@@ -25,6 +25,23 @@ public class Shipment {
     @Column(nullable = false)
     private ShipmentStatus status;
 
+    public LocalDateTime getExpectedArrivalTime() {
+        return expectedArrivalTime;
+    }
+
+    public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
+        this.expectedArrivalTime = expectedArrivalTime;
+    }
+
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
+
+
     public String getTrackingNumber() {
         return trackingNumber;
     }
