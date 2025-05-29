@@ -16,6 +16,10 @@ public class Shipment {
     private String trackingNumber;
     private String origin;
     private String destination;
+
+    // Add this field for supplier name
+    private String supplierName;
+
     private LocalDateTime departureTime;
     private LocalDateTime expectedArrivalTime;
 
@@ -54,6 +58,13 @@ public class Shipment {
     }
     public void setDestination(String destination) {
         this.destination = destination;
+    }
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
     }
 
     public LocalDateTime getDepartureTime() {
