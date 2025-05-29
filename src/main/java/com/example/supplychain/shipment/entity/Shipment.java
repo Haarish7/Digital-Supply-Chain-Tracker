@@ -73,4 +73,5 @@ public class Shipment {
     public void setStatus(ShipmentStatus status) {
         this.status = status;
     }
+
 }

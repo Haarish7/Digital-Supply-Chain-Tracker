@@ -49,10 +49,10 @@ public class AuthController {
 	    }
     
 	    User user = new User();
-	    user.setName(request.getName());
-	    user.setEmail(request.getEmail());
-	    user.setPassword(request.getPassword()); 
-	    user.setRole(role);
+	    user.setName(request.getName(), null);
+	    user.setEmail(request.getEmail(), null);
+	    user.setPassword(request.getPassword(), null); 
+	    user.setRole(role, role);
 
 	    userRepository.save(user);
 	    UserDto userDto = modelMapper.map(user, UserDto.class);
