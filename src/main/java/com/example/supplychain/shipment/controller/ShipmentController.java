@@ -1,5 +1,6 @@
 package com.example.supplychain.shipment.controller;
 
+import com.example.supplychain.dto.DeliveryPerformanceDTO;
 import com.example.supplychain.enums.ShipmentStatus;
 import com.example.supplychain.shipment.entity.Shipment;
 import com.example.supplychain.shipment.service.ShipmentService;
@@ -37,6 +38,17 @@ public class ShipmentController {
     ) {
         return shipmentService.updateShipmentStatus(id, status);
     }
+
+    @GetMapping("/performance/{supplierName}")
+    public DeliveryPerformanceDTO getPerformance(@PathVariable String supplierName) {
+    	return shipmentService.getDeliveryPerformanceForSupplier(supplierName);
+
+
+    }
 }
+
+
+
+
 
 

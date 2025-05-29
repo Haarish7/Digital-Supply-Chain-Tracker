@@ -2,13 +2,9 @@ package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
 import jakarta.persistence.*;
-import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Shipment {
 
     @Id
@@ -18,6 +14,8 @@ public class Shipment {
     private String trackingNumber;
     private String origin;
     private String destination;
+    private String supplierName;
+
     private LocalDateTime departureTime;
     private LocalDateTime expectedArrivalTime;
 
@@ -25,6 +23,15 @@ public class Shipment {
     @Column(nullable = false)
     private ShipmentStatus status;
 
+    // Getters and Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTrackingNumber() {
         return trackingNumber;
@@ -50,6 +57,14 @@ public class Shipment {
         this.destination = destination;
     }
 
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
     public LocalDateTime getDepartureTime() {
         return departureTime;
     }
@@ -73,5 +88,6 @@ public class Shipment {
     public void setStatus(ShipmentStatus status) {
         this.status = status;
     }
-
 }
+
+

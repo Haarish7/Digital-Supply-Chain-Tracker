@@ -1,5 +1,6 @@
 package com.example.supplychain.shipment.service;
 
+import com.example.supplychain.dto.DeliveryPerformanceDTO;
 import com.example.supplychain.enums.ShipmentStatus;
 import com.example.supplychain.shipment.entity.Shipment;
 import com.example.supplychain.shipment.repository.ShipmentRepository;
@@ -34,4 +35,12 @@ public class ShipmentService {
         shipment.setStatus(status);
         return shipmentRepository.save(shipment);
     }
+
+	public DeliveryPerformanceDTO getDeliveryPerformanceForSupplier(String supplierName) {
+		return null;
+	}
+
 }
+
+
+
