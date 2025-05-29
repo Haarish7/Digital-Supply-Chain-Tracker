@@ -58,15 +58,9 @@
           <tags>persp.newWizSC:org.eclipse.ui.editors.wizards.UntitledTextFileWizard</tags>
           <tags>persp.perspSC:org.eclipse.jdt.ui.JavaBrowsingPerspective</tags>
           <tags>persp.perspSC:org.eclipse.debug.ui.DebugPerspective</tags>
-          <tags>persp.editorOnboardingImageUri:platform:/plugin/org.eclipse.jdt.ui/$nl$/icons/full/onboarding_jperspective.png</tags>
-          <tags>persp.editorOnboardingText:Open a file or drop files here to open them.</tags>
           <tags>persp.showIn:org.eclipse.jdt.ui.PackageExplorer</tags>
           <tags>persp.showIn:org.eclipse.team.ui.GenericHistoryView</tags>
           <tags>persp.showIn:org.eclipse.ui.navigator.ProjectExplorer</tags>
-          <tags>persp.editorOnboardingCommand:Find Actions$$$Ctrl+3</tags>
-          <tags>persp.editorOnboardingCommand:Show Key Assist$$$Ctrl+Shift+L</tags>
-          <tags>persp.editorOnboardingCommand:New$$$Ctrl+N</tags>
-          <tags>persp.editorOnboardingCommand:Open Type$$$Ctrl+Shift+T</tags>
           <tags>persp.viewSC:org.eclipse.mylyn.tasks.ui.views.tasks</tags>
           <tags>persp.newWizSC:org.eclipse.mylyn.tasks.ui.wizards.new.repository.task</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.breakpointActionSet</tags>
@@ -81,9 +75,15 @@
           <tags>persp.viewSC:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
           <tags>persp.showIn:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_acdM0zrGEfCSC-54ZAZ-xw" selectedElement="_acdM1DrGEfCSC-54ZAZ-xw" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_acdM1DrGEfCSC-54ZAZ-xw" containerData="2500" selectedElement="_acdz4DrGEfCSC-54ZAZ-xw">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_acdz4DrGEfCSC-54ZAZ-xw" containerData="6000" selectedElement="_acdz5jrGEfCSC-54ZAZ-xw">
+          <tags>persp.editorOnboardingImageUri:platform:/plugin/org.eclipse.jdt.ui/$nl$/icons/full/onboarding_jperspective.png</tags>
+          <tags>persp.editorOnboardingText:Open a file or drop files here to open them.</tags>
+          <tags>persp.editorOnboardingCommand:Find Actions$$$Ctrl+3</tags>
+          <tags>persp.editorOnboardingCommand:Show Key Assist$$$Ctrl+Shift+L</tags>
+          <tags>persp.editorOnboardingCommand:New$$$Ctrl+N</tags>
+          <tags>persp.editorOnboardingCommand:Open Type$$$Ctrl+Shift+T</tags>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_acdM0zrGEfCSC-54ZAZ-xw" selectedElement="_acdz6jrGEfCSC-54ZAZ-xw" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_acdM1DrGEfCSC-54ZAZ-xw" toBeRendered="false" containerData="2500">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_acdz4DrGEfCSC-54ZAZ-xw" toBeRendered="false" containerData="6000">
                 <children xsi:type="basic:PartStack" xmi:id="_acdz4TrGEfCSC-54ZAZ-xw" elementId="left" toBeRendered="false" containerData="6600">
                   <tags>org.eclipse.e4.primaryNavigationStack</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_acdz4jrGEfCSC-54ZAZ-xw" elementId="org.eclipse.jdt.ui.PackageExplorer" toBeRendered="false" ref="_acS0wDrGEfCSC-54ZAZ-xw" closeable="true">
@@ -103,9 +103,8 @@
                     <tags>categoryTag:Java</tags>
                   </children>
                 </children>
-                <children xsi:type="basic:PartStack" xmi:id="_acdz5jrGEfCSC-54ZAZ-xw" elementId="org.springframework.ide.eclipse.boot.dash.views.BootDashViewMStack" containerData="3400" selectedElement="_acdz5zrGEfCSC-54ZAZ-xw">
-                  <tags>active</tags>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_acdz5zrGEfCSC-54ZAZ-xw" elementId="org.springframework.ide.eclipse.boot.dash.views.BootDashView" ref="_acclwzrGEfCSC-54ZAZ-xw" closeable="true">
+                <children xsi:type="basic:PartStack" xmi:id="_acdz5jrGEfCSC-54ZAZ-xw" elementId="org.springframework.ide.eclipse.boot.dash.views.BootDashViewMStack" toBeRendered="false" containerData="3400">
+                  <children xsi:type="advanced:Placeholder" xmi:id="_acdz5zrGEfCSC-54ZAZ-xw" elementId="org.springframework.ide.eclipse.boot.dash.views.BootDashView" toBeRendered="false" ref="_acclwzrGEfCSC-54ZAZ-xw" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:Other</tags>
                   </children>
@@ -118,11 +117,12 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_acdz6jrGEfCSC-54ZAZ-xw" containerData="7500">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_acdz6zrGEfCSC-54ZAZ-xw" containerData="7500" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_acdz6jrGEfCSC-54ZAZ-xw" containerData="7500" selectedElement="_acdz6zrGEfCSC-54ZAZ-xw">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_acdz6zrGEfCSC-54ZAZ-xw" containerData="7500" selectedElement="_acdz7TrGEfCSC-54ZAZ-xw" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_acdz7DrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_acMHEDrGEfCSC-54ZAZ-xw"/>
-                <children xsi:type="basic:PartSashContainer" xmi:id="_acdz7TrGEfCSC-54ZAZ-xw" containerData="2500">
+                <children xsi:type="basic:PartSashContainer" xmi:id="_acdz7TrGEfCSC-54ZAZ-xw" containerData="2500" selectedElement="_acdz7jrGEfCSC-54ZAZ-xw">
                   <children xsi:type="basic:PartStack" xmi:id="_acdz7jrGEfCSC-54ZAZ-xw" elementId="org.eclipse.mylyn.tasks.ui.views.tasksMStack" containerData="5000" selectedElement="_acdz7zrGEfCSC-54ZAZ-xw">
+                    <tags>active</tags>
                     <children xsi:type="advanced:Placeholder" xmi:id="_acdz7zrGEfCSC-54ZAZ-xw" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" ref="_acb-sDrGEfCSC-54ZAZ-xw" closeable="true">
                       <tags>View</tags>
                       <tags>categoryTag:Mylyn</tags>
@@ -333,6 +333,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view linkWithEditor=&quot;true&quot; presentation=&quot;org.eclipse.mylyn.tasks.ui.categorized&quot;>&#xD;&#xA;&lt;sorter groupBy=&quot;CATEGORY_QUERY&quot;>&#xD;&#xA;&lt;sorter>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled0 sortDirection=&quot;1&quot; sortKey=&quot;DUE_DATE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled1 sortDirection=&quot;1&quot; sortKey=&quot;SCHEDULED_DATE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled2 sortDirection=&quot;1&quot; sortKey=&quot;PRIORITY&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled3 sortDirection=&quot;1&quot; sortKey=&quot;RANK&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled4 sortDirection=&quot;1&quot; sortKey=&quot;DATE_CREATED&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled5 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled6 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled7 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.scheduled8 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized0 sortDirection=&quot;1&quot; sortKey=&quot;PRIORITY&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized1 sortDirection=&quot;1&quot; sortKey=&quot;RANK&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized2 sortDirection=&quot;1&quot; sortKey=&quot;DATE_CREATED&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized3 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized4 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized5 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized6 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized7 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;sortorg.eclipse.mylyn.tasks.ui.categorized8 sortDirection=&quot;1&quot; sortKey=&quot;NONE&quot;/>&#xD;&#xA;&lt;/sorter>&#xD;&#xA;&lt;/sorter>&#xD;&#xA;&lt;filteredTreeFindHistory/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Mylyn</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_alYfUDrGEfCSC-54ZAZ-xw" elementId="org.eclipse.mylyn.tasks.ui.views.tasks">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -363,8 +365,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Other</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_aj_YMDrGEfCSC-54ZAZ-xw" elementId="org.springframework.ide.eclipse.boot.dash.views.BootDashView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -390,7 +390,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaKt0DrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aaPmUDrGEfCSC-54ZAZ-xw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_aDRRDzrGEfCSC-54ZAZ-xw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_SR-7EDxNEfCBZ7bYoYKsIA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_aDRRDzrGEfCSC-54ZAZ-xw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaKt0TrGEfCSC-54ZAZ-xw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -398,8 +398,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaKt0zrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aaQNYDrGEfCSC-54ZAZ-xw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_aDPbzDrGEfCSC-54ZAZ-xw"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aaQNYTrGEfCSC-54ZAZ-xw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_aDQC3DrGEfCSC-54ZAZ-xw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_SSAwQDxNEfCBZ7bYoYKsIA" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_aDPbzDrGEfCSC-54ZAZ-xw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_SSAwQTxNEfCBZ7bYoYKsIA" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_aDQC3DrGEfCSC-54ZAZ-xw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaKt1DrGEfCSC-54ZAZ-xw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -420,7 +420,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaKt2DrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aaQ0cDrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_aDRQyDrGEfCSC-54ZAZ-xw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_SSBXUDxNEfCBZ7bYoYKsIA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_aDRQyDrGEfCSC-54ZAZ-xw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aaLU4DrGEfCSC-54ZAZ-xw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2579,7 +2579,7 @@
   <addons xmi:id="_aCvFVjrGEfCSC-54ZAZ-xw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_aCvFVzrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_aC6rcDrGEfCSC-54ZAZ-xw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_SClNITxNEfCBZ7bYoYKsIA" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_aDMYQDrGEfCSC-54ZAZ-xw" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_aDMYQTrGEfCSC-54ZAZ-xw" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>

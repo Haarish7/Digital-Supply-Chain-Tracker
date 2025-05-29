@@ -13,9 +13,6 @@ private long totalShipments;
 private long onTimeDeliveries;
 private long lateDeliveries;
 private double averageDelayInHours;
-public DeliveryPerformanceDTO(String supplierName2, long total, long onTime, long late, double avgDelay) {
-	
-}
 public String getSupplierName() {
 	return supplierName;
 }
