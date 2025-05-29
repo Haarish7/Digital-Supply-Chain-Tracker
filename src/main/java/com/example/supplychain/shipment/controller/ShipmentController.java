@@ -11,36 +11,37 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/shipments")
-public class ShipmentController {@Autowired
-	private ShipmentService shipmentService;
+public class ShipmentController {
 
-	@PostMapping
-	public Shipment createShipment(@RequestBody Shipment shipment) {
-	    return shipmentService.createShipment(shipment);
-	}
+    @Autowired
+    private ShipmentService shipmentService;
 
-	@GetMapping
-	public List<Shipment> getAllShipments() {
-	    return shipmentService.getAllShipments();
-	}
+    @PostMapping
+    public Shipment createShipment(@RequestBody Shipment shipment) {
+        return shipmentService.createShipment(shipment);
+    }
 
-	@GetMapping("/{id}")
-	public Shipment getShipmentById(@PathVariable Long id) {
-	    return shipmentService.getShipmentById(id);
-	}
+    @GetMapping
+    public List<Shipment> getAllShipments() {
+        return shipmentService.getAllShipments();
+    }
 
-	// ✅ New endpoint to update shipment status
-	@PutMapping("/{id}/status")
-	public Shipment updateShipmentStatus(
-	        @PathVariable Long id,
-	        @RequestParam ShipmentStatus status
-	) {
-	    return shipmentService.updateShipmentStatus(id, status);
-	}
+    @GetMapping("/{id}")
+    public Shipment getShipmentById(@PathVariable Long id) {
+        return shipmentService.getShipmentById(id);
+    }
 
-	// ✅ Endpoint to get Delivery Performance per Supplier
-	@GetMapping("/performance/{supplierName}")
-	public DeliveryPerformanceDTO getPerformance(@PathVariable String supplierName) {
-	    return shipmentService.getDeliveryPerformanceForSupplier(supplierName);
-	}
+    @PutMapping("/{id}/status")
+    public Shipment updateShipmentStatus(
+            @PathVariable Long id,
+            @RequestParam ShipmentStatus status
+    ) {
+        return shipmentService.updateShipmentStatus(id, status);
+    }
+
+    @GetMapping("/performance/{supplierName}")
+    public DeliveryPerformanceDTO getPerformance(@PathVariable String supplierName) {
+        return shipmentService.getDeliveryPerformanceForSupplier(supplierName);
+    }
 }
+
