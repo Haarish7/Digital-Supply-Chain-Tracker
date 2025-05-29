@@ -2,13 +2,11 @@ package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
 import jakarta.persistence.*;
-import lombok.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Shipment {
 
     @Id
@@ -25,11 +23,21 @@ public class Shipment {
     @Column(nullable = false)
     private ShipmentStatus status;
 
+    @OneToMany(mappedBy = "shipment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Checkpoint> checkpoints = new ArrayList<>();
+
+    // --- Getters and Setters ---
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTrackingNumber() {
         return trackingNumber;
     }
-
     public void setTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;
     }
@@ -37,7 +45,6 @@ public class Shipment {
     public String getOrigin() {
         return origin;
     }
-
     public void setOrigin(String origin) {
         this.origin = origin;
     }
@@ -45,7 +52,6 @@ public class Shipment {
     public String getDestination() {
         return destination;
     }
-
     public void setDestination(String destination) {
         this.destination = destination;
     }
@@ -53,7 +59,6 @@ public class Shipment {
     public LocalDateTime getDepartureTime() {
         return departureTime;
     }
-
     public void setDepartureTime(LocalDateTime departureTime) {
         this.departureTime = departureTime;
     }
@@ -61,7 +66,6 @@ public class Shipment {
     public LocalDateTime getExpectedArrivalTime() {
         return expectedArrivalTime;
     }
-
     public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
         this.expectedArrivalTime = expectedArrivalTime;
     }
@@ -69,8 +73,14 @@ public class Shipment {
     public ShipmentStatus getStatus() {
         return status;
     }
-
     public void setStatus(ShipmentStatus status) {
         this.status = status;
+    }
+
+    public List<Checkpoint> getCheckpoints() {
+        return checkpoints;
+    }
+    public void setCheckpoints(List<Checkpoint> checkpoints) {
+        this.checkpoints = checkpoints;
     }
 }
