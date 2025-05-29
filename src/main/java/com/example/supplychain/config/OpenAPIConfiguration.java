@@ -21,6 +21,7 @@ public class OpenAPIConfiguration {
         Contact contact = new Contact();
         contact.setName("Your Name");
         contact.setEmail("your@email.com");
+        //fdasfdasfasfasdf
 
         Info info = new Info()
                 .title("Digital Supply Chain API")
