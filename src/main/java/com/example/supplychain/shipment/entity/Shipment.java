@@ -1,25 +1,14 @@
 package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Shipment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,19 +18,26 @@ public class Shipment {
     private String destination;
     private LocalDateTime departureTime;
     private LocalDateTime expectedArrivalTime;
-    private LocalDateTime actualArrivalTime;       // Newly added
-    private String supplierName;                   // Newly added
-    private LocalDateTime lastCheckpointTime;      // Newly added for report queries
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ShipmentStatus status;
 
-    // Getters and Setters (optional due to Lombok @Data but retained if needed)
+    @OneToMany(mappedBy = "shipment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Checkpoint> checkpoints = new ArrayList<>();
+
+    // --- Getters and Setters ---
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getTrackingNumber() {
         return trackingNumber;
     }
-
     public void setTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;
     }
@@ -49,7 +45,6 @@ public class Shipment {
     public String getOrigin() {
         return origin;
     }
-
     public void setOrigin(String origin) {
         this.origin = origin;
     }
@@ -57,7 +52,6 @@ public class Shipment {
     public String getDestination() {
         return destination;
     }
-
     public void setDestination(String destination) {
         this.destination = destination;
     }
@@ -65,7 +59,6 @@ public class Shipment {
     public LocalDateTime getDepartureTime() {
         return departureTime;
     }
-
     public void setDepartureTime(LocalDateTime departureTime) {
         this.departureTime = departureTime;
     }
@@ -73,41 +66,21 @@ public class Shipment {
     public LocalDateTime getExpectedArrivalTime() {
         return expectedArrivalTime;
     }
-
     public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
         this.expectedArrivalTime = expectedArrivalTime;
-    }
-
-    public LocalDateTime getActualArrivalTime() {
-        return actualArrivalTime;
-    }
-
-    public void setActualArrivalTime(LocalDateTime actualArrivalTime) {
-        this.actualArrivalTime = actualArrivalTime;
-    }
-
-    public String getSupplierName() {
-        return supplierName;
-    }
-
-    public void setSupplierName(String supplierName) {
-        this.supplierName = supplierName;
-    }
-
-    public LocalDateTime getLastCheckpointTime() {
-        return lastCheckpointTime;
-    }
-
-    public void setLastCheckpointTime(LocalDateTime lastCheckpointTime) {
-        this.lastCheckpointTime = lastCheckpointTime;
     }
 
     public ShipmentStatus getStatus() {
         return status;
     }
-
     public void setStatus(ShipmentStatus status) {
         this.status = status;
     }
-}
 
+    public List<Checkpoint> getCheckpoints() {
+        return checkpoints;
+    }
+    public void setCheckpoints(List<Checkpoint> checkpoints) {
+        this.checkpoints = checkpoints;
+    }
+}
