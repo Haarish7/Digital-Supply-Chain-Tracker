@@ -2,13 +2,13 @@ package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Shipment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,12 +16,11 @@ public class Shipment {
     private String trackingNumber;
     private String origin;
     private String destination;
-
-    // Add this field for supplier name
     private String supplierName;
 
     private LocalDateTime departureTime;
     private LocalDateTime expectedArrivalTime;
+    private LocalDateTime lastCheckpointTime; // Required for reporting
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -79,6 +78,13 @@ public class Shipment {
     }
     public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
         this.expectedArrivalTime = expectedArrivalTime;
+    }
+
+    public LocalDateTime getLastCheckpointTime() {
+        return lastCheckpointTime;
+    }
+    public void setLastCheckpointTime(LocalDateTime lastCheckpointTime) {
+        this.lastCheckpointTime = lastCheckpointTime;
     }
 
     public ShipmentStatus getStatus() {
