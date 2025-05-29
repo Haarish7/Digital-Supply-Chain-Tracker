@@ -30,7 +30,7 @@ public class ShipmentController {
         return shipmentService.getShipmentById(id);
     }
 
-    // ✅ New endpoint to update shipment status
+
     @PutMapping("/{id}/status")
     public Shipment updateShipmentStatus(
             @PathVariable Long id,
