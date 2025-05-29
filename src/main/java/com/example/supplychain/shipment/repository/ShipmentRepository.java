@@ -4,11 +4,16 @@ import com.example.supplychain.shipment.entity.Shipment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
 public interface ShipmentRepository extends JpaRepository<Shipment, Long> {
-    List<Shipment> findBySupplierName(String supplierName);
 
-    // You can add other query methods here as needed, using properties that exist in Shipment.java
+
+    Shipment findByTrackingNumber(String trackingNumber);
+
+    List<Shipment> findAllByLastCheckpointTimeBetween(LocalDateTime start, LocalDateTime end);
+
+    List<Shipment> findBySupplierName(String supplierName);
 }
