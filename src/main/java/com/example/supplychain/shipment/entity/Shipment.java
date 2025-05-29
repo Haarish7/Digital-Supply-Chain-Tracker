@@ -1,8 +1,18 @@
 package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
-import jakarta.persistence.*;
-import lombok.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,82 +20,94 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Shipment {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String trackingNumber;
-	private String origin;
-	private String destination;
-	private LocalDateTime departureTime;
-	private LocalDateTime expectedArrivalTime;
+    private String trackingNumber;
+    private String origin;
+    private String destination;
+    private LocalDateTime departureTime;
+    private LocalDateTime expectedArrivalTime;
+    private LocalDateTime actualArrivalTime;       // Newly added
+    private String supplierName;                   // Newly added
+    private LocalDateTime lastCheckpointTime;      // Newly added for report queries
 
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private ShipmentStatus status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ShipmentStatus status;
 
-	// ✅ This field was missing and is required for report queries
-	private LocalDateTime lastCheckpointTime;
+    // Getters and Setters (optional due to Lombok @Data but retained if needed)
+    public String getTrackingNumber() {
+        return trackingNumber;
+    }
 
-	// Getters and Setters (optional due to Lombok @Data)
-	public String getTrackingNumber() {
-	    return trackingNumber;
-	}
+    public void setTrackingNumber(String trackingNumber) {
+        this.trackingNumber = trackingNumber;
+    }
 
-	public void setTrackingNumber(String trackingNumber) {
-	    this.trackingNumber = trackingNumber;
-	}
+    public String getOrigin() {
+        return origin;
+    }
 
-	public String getOrigin() {
-	    return origin;
-	}
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 
-	public void setOrigin(String origin) {
-	    this.origin = origin;
-	}
+    public String getDestination() {
+        return destination;
+    }
 
-	public String getDestination() {
-	    return destination;
-	}
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
-	public void setDestination(String destination) {
-	    this.destination = destination;
-	}
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
 
-	public LocalDateTime getDepartureTime() {
-	    return departureTime;
-	}
+    public void setDepartureTime(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
 
-	public void setDepartureTime(LocalDateTime departureTime) {
-	    this.departureTime = departureTime;
-	}
+    public LocalDateTime getExpectedArrivalTime() {
+        return expectedArrivalTime;
+    }
 
-	public LocalDateTime getExpectedArrivalTime() {
-	    return expectedArrivalTime;
-	}
+    public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
+        this.expectedArrivalTime = expectedArrivalTime;
+    }
 
-	public void setExpectedArrivalTime(LocalDateTime expectedArrivalTime) {
-	    this.expectedArrivalTime = expectedArrivalTime;
-	}
+    public LocalDateTime getActualArrivalTime() {
+        return actualArrivalTime;
+    }
 
-	public ShipmentStatus getStatus() {
-	    return status;
-	}
+    public void setActualArrivalTime(LocalDateTime actualArrivalTime) {
+        this.actualArrivalTime = actualArrivalTime;
+    }
 
-	public void setStatus(ShipmentStatus status) {
-	    this.status = status;
-	}
+    public String getSupplierName() {
+        return supplierName;
+    }
 
-	public LocalDateTime getLastCheckpointTime() {
-	    return lastCheckpointTime;
-	}
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
 
-	public void setLastCheckpointTime(LocalDateTime lastCheckpointTime) {
-	    this.lastCheckpointTime = lastCheckpointTime;
-	}
+    public LocalDateTime getLastCheckpointTime() {
+        return lastCheckpointTime;
+    }
 
+    public void setLastCheckpointTime(LocalDateTime lastCheckpointTime) {
+        this.lastCheckpointTime = lastCheckpointTime;
+    }
+
+    public ShipmentStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ShipmentStatus status) {
+        this.status = status;
+    }
 }
-
-
-
 

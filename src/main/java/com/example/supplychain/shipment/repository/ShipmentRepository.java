@@ -9,10 +9,11 @@ import java.util.List;
 
 @Repository
 public interface ShipmentRepository extends JpaRepository<Shipment, Long> {
-	// Find shipment by tracking number
-	Shipment findByTrackingNumber(String trackingNumber);
 
-	// Used by ReportService
-	List<Shipment> findAllByLastCheckpointTimeBetween(LocalDateTime start, LocalDateTime end);
 
+    Shipment findByTrackingNumber(String trackingNumber);
+
+    List<Shipment> findAllByLastCheckpointTimeBetween(LocalDateTime start, LocalDateTime end);
+
+    List<Shipment> findBySupplierName(String supplierName);
 }
