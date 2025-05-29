@@ -13,7 +13,5 @@ public interface ShipmentRepository extends JpaRepository<Shipment, Long> {
 
     Shipment findByTrackingNumber(String trackingNumber);
 
-    List<Shipment> findAllByLastCheckpointTimeBetween(LocalDateTime start, LocalDateTime end);
-
-    List<Shipment> findBySupplierName(String supplierName);
+   
 }

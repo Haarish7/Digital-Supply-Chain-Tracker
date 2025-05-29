@@ -14,6 +14,7 @@ public class AlertService {
     @Autowired
     private AlertRepository alertRepository;
 
+    // Create a general alert
     public Alert createAlert(String message, String type) {
         Alert alert = new Alert();
         alert.setMessage(message);
@@ -21,6 +22,11 @@ public class AlertService {
         alert.setCreatedAt(LocalDateTime.now());
         alert.setResolved(false);
         return alertRepository.save(alert);
+    }
+
+    // Create a damage alert (convenience method)
+    public Alert createDamageAlert(String message) {
+        return createAlert(message, "DAMAGE");
     }
 
     public List<Alert> getAllAlerts() {
