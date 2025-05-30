@@ -9,7 +9,6 @@ import com.example.supplychain.enums.Role;
 import com.example.supplychain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -19,62 +18,50 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class AuthController {
-	
-	@Autowired
-	 public UserRepository userRepository;
-	 public ModelMapper modelMapper;
-	
-	
-//	private final Uer uer = new Uer;
-	
 
+    private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
 
-	@PostMapping("/register")
-	public AuthResponse register(@RequestBody RegisterRequest request) {
+    @PostMapping("/register")
+    public AuthResponse register(@RequestBody RegisterRequest request) {
 
-//	    if (request.getEmail() == null || request.getPassword() == null || request.getName() == null || request.getRole() == null) {
-//	        return new AuthResponse(null, "Missing required fields", null);
-//	    }
-//
-//
-	    Role role;
-	    try {
-	        role = Role.valueOf(request.getRole().toUpperCase());
-	    } catch (IllegalArgumentException e) {
-	        return new AuthResponse(null, "Invalid role specified", null);
-	    }
+        Role role;
+        try {
+            role = Role.valueOf(request.getRole().toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return new AuthResponse(null, "Invalid role specified", null);
+        }
 
-	    if (userRepository.findByEmail(request.getEmail()).isPresent()) {
-	        return new AuthResponse(null, "Email already registered", null);
-	    }
-    
-	    User user = new User();
-	    user.setName(request.getName());
-	    user.setEmail(request.getEmail());
-	    user.setPassword(request.getPassword()); 
-	    user.setRole(role);
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
+            return new AuthResponse(null, "Email already registered", null);
+        }
 
-	    userRepository.save(user);
-	    UserDto userDto = modelMapper.map(user, UserDto.class);
-	    return new AuthResponse(null, "User registered successfully", userDto);
-	}
+        User user = new User();
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword()); // You can hash this later
+        user.setRole(role);
 
-	@PostMapping("/login")
-	public AuthResponse login(@RequestBody LoginRequest request) {
-	    Optional<User> userOpt = userRepository.findByEmail(request.getEmail());
+        userRepository.save(user);
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return new AuthResponse(null, "User registered successfully", userDto);
+    }
 
-	    if (userOpt.isEmpty()) {
-	        return new AuthResponse(null, "User not found", null);
-	    }
+    @PostMapping("/login")
+    public AuthResponse login(@RequestBody LoginRequest request) {
+        Optional<User> userOpt = userRepository.findByEmail(request.getEmail());
 
-	    User user = userOpt.get();
+        if (userOpt.isEmpty()) {
+            return new AuthResponse(null, "User not found", null);
+        }
 
-	    if (!user.getPassword().equals(request.getPassword())) {
-	        return new AuthResponse(null, "Invalid password", null);
-	    }
+        User user = userOpt.get();
 
-	    UserDto userDto = modelMapper.map(user, UserDto.class);
-	    return new AuthResponse(null, "Login successful", userDto);
-	}
+        if (!user.getPassword().equals(request.getPassword())) {
+            return new AuthResponse(null, "Invalid password", null);
+        }
 
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return new AuthResponse(null, "Login successful", userDto);
+    }
 }
