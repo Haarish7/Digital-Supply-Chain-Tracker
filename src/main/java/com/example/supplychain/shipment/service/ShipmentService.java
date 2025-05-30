@@ -62,4 +62,9 @@ public class ShipmentService {@Autowired
 
 	    return new DeliveryPerformanceDTO(supplierName ,total, onTime, late, avgDelay);
 	}
+
+	public void setShipmentRepository(ShipmentRepository shipmentRepository2) {
+		
+		
+	}
 }
