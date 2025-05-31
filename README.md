@@ -133,7 +133,7 @@ GET /api/reports/delayed-shipments
 
 ## 🖼 ER Diagram
 
-![ER Diagram](ER-diagram.png)
+![ER Diagram](ER Diagram.pdf)
 
 ---
 
