@@ -2,11 +2,23 @@ package com.example.supplychain.shipment.entity;
 
 import com.example.supplychain.enums.ShipmentStatus;
 import jakarta.persistence.*;
+<<<<<<< HEAD
+=======
+import lombok.*;
+
+>>>>>>> 2efbfae61d12344074a8f6644ffbae56ec0fe9d7
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+<<<<<<< HEAD
+=======
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+>>>>>>> 2efbfae61d12344074a8f6644ffbae56ec0fe9d7
 public class Shipment {
 
     @Id
@@ -18,10 +30,16 @@ public class Shipment {
     private String destination;
     private LocalDateTime departureTime;
     private LocalDateTime expectedArrivalTime;
+<<<<<<< HEAD
+=======
+    private LocalDateTime actualArrivalTime;
+    private String supplierName;
+>>>>>>> 2efbfae61d12344074a8f6644ffbae56ec0fe9d7
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ShipmentStatus status;
+<<<<<<< HEAD
 
     @OneToMany(mappedBy = "shipment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Checkpoint> checkpoints = new ArrayList<>();
@@ -83,4 +101,6 @@ public class Shipment {
     public void setCheckpoints(List<Checkpoint> checkpoints) {
         this.checkpoints = checkpoints;
     }
+=======
+>>>>>>> 2efbfae61d12344074a8f6644ffbae56ec0fe9d7
 }

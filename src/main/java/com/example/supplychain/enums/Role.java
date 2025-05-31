@@ -4,5 +4,6 @@ public enum Role {
     ADMIN,
     SUPPLIER,
     TRANSPORTER,
-    MANAGER
+    MANAGER,
+    USER,
 }

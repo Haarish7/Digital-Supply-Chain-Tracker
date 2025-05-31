@@ -1,0 +1,56 @@
+.swagger-ui .topbar {
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ccff);
+  background-size: 600% 600%;
+  animation: gradient 8s ease infinite;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+@keyframes gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.swagger-ui .info h2 {
+  color: #ff00cc;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.swagger-ui .btn {
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  border: none;
+  color: white;
+}
+.swagger-ui .opblock-tag {
+  background: #e6f7ff;
+  color: #ff00cc;
+  border-left: 4px solid #ff00cc;
+}
+.swagger-ui .opblock .opblock-summary {
+  background: #f0f0ff;
+}
+.swagger-ui .opblock .opblock-summary:hover {
+  background: #d0d0ff;
+}
+.swagger-ui .opblock .opblock-summary-method {
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: bold;
+}
+.swagger-ui .opblock .opblock-summary-path {
+  color: #3333ff;
+}
+.swagger-ui .model-title {
+  color: #ff00cc;
+}
+.swagger-ui .tab li[role="presentation"]:not(.active) a {
+  color: #3333ff;
+}
+.swagger-ui .tab li.active a {
+  color: #ff00cc;
+  border-bottom: 2px solid #ff00cc;
+}
+.swagger-ui .scheme-container {
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ccff);
+  background-size: 600% 600%;
+  animation: gradient 8s ease infinite;
+}

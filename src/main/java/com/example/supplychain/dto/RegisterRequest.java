@@ -1,54 +1,64 @@
 package com.example.supplychain.dto;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
 
-@Data
 public class RegisterRequest {
-	@NotBlank(message = "Name is required")
-	private String Name;
 
-	@Email(message = "Enter a valid email")
-	@NotBlank(message = "Email is required")
-	private String Email;
+    @NotBlank(message = "Name is required")
+    private String Name;
 
-	@NotBlank(message = "Password is required")
-	private String Password;
+    @Email(message = "Enter a valid email")
+    @NotBlank(message = "Email is required")
+    private String Email;
 
-	@NotBlank(message = "Role is required")
-	private String Role;
+    @NotBlank(message = "Password is required")
+    private String Password;
 
-	public String getName() {
-		return Name;
-	}
+    @NotBlank(message = "Role is required")
+    private String Role;
 
-	public void setName(String name) {
-		this.Name = name;
-	}
+    // ✅ All-args constructor (required for test cases)
+    public RegisterRequest(String name, String email, String password, String role) {
+        this.Name = name;
+        this.Email = email;
+        this.Password = password;
+        this.Role = role;
+    }
 
-	public String getEmail() {
-		return Email;
-	}
+    public RegisterRequest() {
+        // no-args constructor
+    }
 
-	public void setEmail(String email) {
-		Email = email;
-	}
+    public String getName() {
+        return Name;
+    }
 
-	public String getPassword() {
-		return Password;
-	}
+    public void setName(String name) {
+        this.Name = name;
+    }
 
-	public void setPassword(String password) {
-		Password = password;
-	}
+    public String getEmail() {
+        return Email;
+    }
 
-	public String getRole() {
-		return Role;
-	}
+    public void setEmail(String email) {
+        Email = email;
+    }
 
-	public void setRole(String role) {
-		this.Role = role;
-	}
+    public String getPassword() {
+        return Password;
+    }
 
+    public void setPassword(String password) {
+        Password = password;
+    }
 
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        this.Role = role;
+    }
 }
